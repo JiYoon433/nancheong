@@ -15,51 +15,48 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.test.nancheong.databinding.ActivityMainBinding;
+import com.test.nancheong.ui.SelfTest.SelfTestMainFragment;
+import com.test.nancheong.ui.baby_tab.Baby_tabFragment;
+import com.test.nancheong.ui.calendar.CalendarFragment;
+import com.test.nancheong.ui.consultBoard.ConsultBoardFragment;
+import com.test.nancheong.ui.dictionary.DictionaryFragment;
+import com.test.nancheong.ui.home.HomeFragment;
+import com.test.nancheong.ui.hospital.HospitalFragment;
+import com.test.nancheong.ui.login.LoginFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+    HomeFragment homeFragment;
+    DictionaryFragment dictionaryFragment;
+    CalendarFragment calendarFragment;
+    HospitalFragment hospitalFragment;
+    Baby_tabFragment baby_tabFragment;
+    SelfTestMainFragment selfTestMainFragment;
+    ConsultBoardFragment consultBoardFragment;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        LoginFragment loginFragment =(LoginFragment)getSupportFragmentManager().findFragmentById(R.id.login);
+    }
+    public void onFragmentChange(int index){
+     switch (index){
+         case 0:getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit(); break;
+         case 1:getSupportFragmentManager().beginTransaction().replace(R.id.container, selfTestMainFragment).commit(); break;
+         case 2:getSupportFragmentManager().beginTransaction().replace(R.id.container, baby_tabFragment).commit(); break;
+         case 3:getSupportFragmentManager().beginTransaction().replace(R.id.container, calendarFragment).commit(); break;
+         case 4:getSupportFragmentManager().beginTransaction().replace(R.id.container, dictionaryFragment).commit(); break;
+         case 5:getSupportFragmentManager().beginTransaction().replace(R.id.container, consultBoardFragment).commit(); break;
+         case 6:getSupportFragmentManager().beginTransaction().replace(R.id.container, hospitalFragment).commit(); break;
 
-        setSupportActionBar(binding.appBarMain.toolbar);
-        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_login, R.id.nav_mypage, R.id.nav_calendar, R.id.nav_recorder)
-                .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+     }
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, mAppBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
 }
+

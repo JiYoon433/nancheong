@@ -1,83 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#BCE2D7"
+    android:gravity="center_horizontal"
     tools:context=".ui.dictionary.DictionaryFragment">
-
+    <include layout="@layout/app_bar_main"/>
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="179dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="53dp"
-        android:layout_marginBottom="38dp"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
         android:text="난청 백과사전"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold"
+        android:textSize="20sp"
+    />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="48dp"
+        android:background="@drawable/button_background"
+        android:gravity="center"
         android:text="난청이란?"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        app:backgroundTint="#F0F0F0" />
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="51dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+        android:gravity="center"
         android:text="난청 증상"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        android:textSize="17sp"
+        app:backgroundTint="#FOFOFO"
+         />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="48dp"
         android:text="난청 종류"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        android:textSize="17sp"
+        app:backgroundTint="#F0F0F0"
+        />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="57dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
         android:text="난청 원인"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        android:textSize="17sp"
+        app:backgroundTint="#FOFOFO"
+        />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="250dp"
-        android:layout_height="0dp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="100dp"
         android:text="난청 치료"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        android:textColor="@color/black"
+        android:background="@drawable/button_background"
+        android:textSize="17sp"
+        app:backgroundTint="#F0F0F0"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

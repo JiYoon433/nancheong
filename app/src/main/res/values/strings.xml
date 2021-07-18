@@ -14,4 +14,6 @@
     <string name="menu_calendar">진료내역 및 일정</string>
     <string name="menu_recorder">상담 관련</string>
     <string name="menu_hospital">내 주변병원</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
